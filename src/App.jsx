@@ -1,4 +1,4 @@
-import Oficials from "./components/oficials";
+import Oficials from "./components/Oficials";
 import Community from "./components/Community";
 
 function App() {
