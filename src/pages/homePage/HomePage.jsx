@@ -1,9 +1,9 @@
 import Community from "./components/Community";
-import Oficials from "../../components/Oficials";
+import Oficials from "./components/Oficials";
 
 function HomePage(){
     return(
-        <div className="flex flex-col">
+        <div className="flex flex-col pb-5">
             <Oficials/>
             <Community/>
         </div>
