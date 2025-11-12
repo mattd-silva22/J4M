@@ -7,8 +7,8 @@ function AppRouter() {
   return (
     <Routes>
       <Route element={<SidebarLayout />}>
-        <Route path="/" element={<HomePage/>} />
-        <Route path="/campeoes" element={<Campeoes/>}/>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/campeoes" element={<Campeoes />} />
       </Route>
     </Routes>
   );
