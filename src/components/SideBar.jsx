@@ -1,44 +1,60 @@
-import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import j4m_logo from "../assets/logo_j4m.svg";
 import home_icon from "../assets/home_icon.svg";
 import champions_icon from "../assets/champions_icon.svg";
 import library_icon from "../assets/library_icon.svg";
 import team_icon from "../assets/team_icon.svg";
 import settings_icon from "../assets/settings_icon.svg";
+import { Link } from "react-router-dom";
 
 function SideBar() {
-  const arr = [1, 2, 3, 4];
-
-  console.log(arr);
   return (
-    <Sidebar width="450px" backgroundColor="#121212">
-      <div className="p-10 h-full">
-        <img className="m-auto p-5" src={j4m_logo} alt="logo j4m" />
-        <Menu>
-          <div>
-            <MenuItem icon={<img src={home_icon} alt="home icon" />} className="font-orbitron text-gray text-2xl py-2">
-              INÍCIO
-            </MenuItem>
-            <MenuItem icon={<img src={champions_icon} alt="champions icon" />} className="font-orbitron text-gray text-2xl py-2">
-              CAMPEÕES
-            </MenuItem>
-            <MenuItem icon={<img src={library_icon} alt="library icon" />} className="font-orbitron text-gray text-2xl py-2">
-              BIBLIOTECA
-            </MenuItem>
-            <MenuItem icon={<img src={team_icon} alt="team icon" />} className="font-orbitron text-gray text-2xl py-2">
-              EQUIPE
-            </MenuItem>
-          </div>
+    <nav className="w-113 bg-black flex flex-col h-full min-h-screen py-7 sticky top-0">
+      <ul className="flex flex-col w-full">
+        <Link to="/" className="transition duration-300 hover:scale-105">
+          <img className="m-auto p-7" src={j4m_logo} alt="logo j4m" />
+        </Link>
+        <Link to="/" className="transition duration-300 hover:scale-105">
+          <li className="font-orbitron text-gray text-2xl py-2 flex items-center gap-5 px-20">
+            <img className="w-10 h-10" src={home_icon} alt="home icon" />
+            <p>INÍCIO</p>
+          </li>
+        </Link>
+        <Link to="/campeoes" className="transition duration-300 hover:scale-105">
+          <li className="font-orbitron text-gray text-2xl py-2 flex items-center gap-5 px-20">
+            <img className="w-10 h-10" src={champions_icon} alt="champions icon" />
+            <p>CAMPEÕES</p>
+          </li>
+        </Link>
+        <Link to="/biblioteca" className="transition duration-300 hover:scale-105">
+          <li className="font-orbitron text-gray text-2xl py-2 flex items-center gap-5 px-20">
+            <img className="w-10 h-10" src={library_icon} alt="library icon" />
+            <p>BIBLIOTECA</p>
+          </li>
+        </Link>
+        <Link to="/equipe" className="transition duration-300 hover:scale-105">
+          <li className="font-orbitron text-gray text-2xl py-2 flex items-center gap-5 px-20">
+            <img className="w-10 h-10" src={team_icon} alt="library icon" />
+            <p>EQUIPE</p>
+          </li>
+        </Link>
 
-          <SubMenu className="font-orbitron text-gray text-2xl mt-15" label="MINHAS JAMS">
-            <MenuItem>jam1</MenuItem>
-            <MenuItem>jam2</MenuItem>
-            <MenuItem>jam3</MenuItem>
-          </SubMenu>
-        </Menu>
-        <MenuItem className="mt-auto" icon={<img src={settings_icon} alt="team icon" />} />
-      </div>
-    </Sidebar>
+        <li className="font-orbitron text-gray text-2xl py-2 flex flex-col gap-5 px-20 mt-20">
+          <Link to="/myjams" className="transition duration-300 hover:scale-105">
+            <p>MINHAS JAMS</p>
+          </Link>
+          <ul className="font-orbitron text-gray text-2xl flex flex-col">
+            <li className="py-2">jam1</li>
+            <li className="py-2">jam2</li>
+            <li className="py-2">jam3</li>
+          </ul>
+        </li>
+      </ul>
+      <Link className="mt-auto transition duration-300 hover:scale-105" to="/configuracoes">
+        <li className="pl-18 list-none w-full">
+          <img src={settings_icon} alt="team icon" />
+        </li>
+      </Link>
+    </nav>
   );
 }
 
