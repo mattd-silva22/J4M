@@ -1,15 +1,15 @@
-import SideBar from "./SideBar"
-import { Outlet } from "react-router-dom"
-function SidebarLayout(){
-    return (
-        <div className="flex flex-row">
-            {/* <SideBar/> ainda em desenvolvimento */}
-            <div className="pt-21 px-26 w-full">
-                <Outlet/>
-            </div>
-            
-        </div>
-    )
+import { Outlet } from "react-router-dom";
+import SideBar from "./SideBar";
+
+function SidebarLayout({ logged }) {
+  return (
+    <div className="flex">
+      <SideBar logged={logged} />
+      <div className="p-10 w-full">
+        <Outlet />
+      </div>
+    </div>
+  );
 }
 
-export default SidebarLayout
+export default SidebarLayout;
